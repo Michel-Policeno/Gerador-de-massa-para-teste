@@ -1,0 +1,15 @@
+{
+  "4devs": {
+    "url": "https://www.4devs.com.br/gerador_de_cpf",
+    "semPontuacao": "#pontuacao_nao",
+    "botaoGerarCpf": "#bt_gerar_cpf",
+    "campoCpfGerado": "#texto_cpf"
+  },
+
+  "receitaFederal": {
+    "url": "https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp",
+    "inputCpf": "input[name='txtCPF']",
+    "inputDtNascimento": "input[name='txtDataNascimento']",
+    "botaoEnviar": "input[name='Enviar']"
+  }
+}
