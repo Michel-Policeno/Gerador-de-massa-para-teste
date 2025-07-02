@@ -1,8 +1,9 @@
 import { Page } from "playwright";
+import seletores from "../selectors/paginas.json" with { type: "json" };
 
 export async function validaCpf(page: Page, cpf: string): Promise<boolean> {
   await page.goto(
-    "https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp",
+    seletores['receitaFederal'].url,
     { waitUntil: "load" }
   );
   //simular ação humana - pageDown
@@ -10,14 +11,14 @@ export async function validaCpf(page: Page, cpf: string): Promise<boolean> {
   await page.keyboard.press("PageDown");
   await page.waitForTimeout(505);
 
-  await page.type('input[name="txtCPF"]', cpf, { delay: 380 });
+  await page.type(seletores['receitaFederal'].inputCpf, cpf, { delay: 380 });
 
   //simular ação humana - mudar de campo com tab
   await page.waitForTimeout(222);
   await page.keyboard.press("Tab");
   await page.waitForTimeout(302);
 
-  await page.type('input[name="txtDataNascimento"]', "01011980", {
+  await page.type(seletores['receitaFederal'].inputDtNascimento, "01011980", {
     delay: 451,
   });
 
@@ -30,7 +31,7 @@ export async function validaCpf(page: Page, cpf: string): Promise<boolean> {
   await page.keyboard.up(" ");
   await page.waitForTimeout(2000);
 
-  await page.click('input[name="Enviar"]');
+  await page.click(seletores['receitaFederal'].botaoEnviar);
   await page.waitForTimeout(2000);
 
   const body = await page.content();

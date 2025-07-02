@@ -11,12 +11,13 @@ async function main(): Promise<void> {
   const page = await browser.newPage();
   const resultado: string[][] = [];
 
-  while (resultado.length < 5) {
+  while (resultado.length < 2) {
     try {
       const cpfGerado = await geradorCPF(page);
       const valido = await validaCpf(page, cpfGerado);
       if (valido) {
         resultado.push([cpfGerado]);
+        console.log(`CPF ${cpfGerado} - sucesso`);
       }
     } catch (err) {
       console.error(`Erro ao gerar CPF. Erro: ${err}`);
