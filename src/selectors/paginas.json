@@ -1,15 +1,25 @@
 {
   "4devs": {
     "url": "https://www.4devs.com.br/gerador_de_cpf",
+    "urlCNPJ": "https://www.4devs.com.br/gerador_de_cnpj",
     "semPontuacao": "#pontuacao_nao",
     "botaoGerarCpf": "#bt_gerar_cpf",
-    "campoCpfGerado": "#texto_cpf"
+    "campoCpfGerado": "#texto_cpf",
+    "botaoGerarCNPJ": "#bt_gerar_cnpj",
+    "campoCNPJGerado": "#texto_cnpj"
   },
 
   "receitaFederal": {
     "url": "https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp",
+    "urlCNPJ": "https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp",
     "inputCpf": "input[name='txtCPF']",
     "inputDtNascimento": "input[name='txtDataNascimento']",
-    "botaoEnviar": "input[name='Enviar']"
+    "botaoEnviar": "input[name='Enviar']",
+    "inputCNPJ": "input[name='cnpj']"
+  },
+
+  "informeCadastral": {
+    "url": "https://www.informecadastral.com.br/",
+    "inputCNPJ": "#cnpj"
   }
 }
